@@ -1,5 +1,7 @@
 import type { Config } from '@react-router/dev/config';
-import { basename } from './app/config';
+
+export const basename =
+    process.env.GITHUB_ACTIONS === 'true' ? '/molecule_playground/' : '/';
 
 export default {
     // Config options...
