@@ -4,6 +4,7 @@ import type { SpringValue } from '@react-spring/three';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import type React from 'react';
+import { useEffect, useRef } from 'react';
 
 export interface AtomPosition {
     symbol: string;
@@ -18,17 +19,29 @@ export interface AtomsCanvasProps {
 }
 
 export const AtomsCanvas: React.FC<AtomsCanvasProps> = ({ atoms }) => {
+    // 前回の座標を記憶
+    const prevAtoms = useRef<AtomPosition[]>(atoms);
+    useEffect(() => {
+        prevAtoms.current = atoms;
+    }, [atoms]);
     const [springs] = useSprings(
         atoms.length,
         (index) => ({
-            position: [
-                atoms[index].x,
-                Math.sin(Date.now() / 500 + index) * 0.5,
-                atoms[index].z
-            ],
+            from: {
+                position: prevAtoms.current[index]
+                    ? [
+                          prevAtoms.current[index].x,
+                          prevAtoms.current[index].y,
+                          prevAtoms.current[index].z
+                      ]
+                    : [atoms[index].x, atoms[index].y, atoms[index].z]
+            },
+            to: {
+                position: [atoms[index].x, atoms[index].y, atoms[index].z]
+            },
             config: { mass: 1, tension: 120, friction: 14 }
         }),
-        [atoms.length]
+        [atoms]
     );
     return (
         <Canvas

@@ -1,4 +1,5 @@
 import { AtomsCanvas } from '@/components/atoms/AtomsCanvas';
+import type { AtomPosition } from '@/components/atoms/AtomsCanvas/AtomsCanvas';
 import { useCompoundMatcher } from '@/components/hooks/useCompoundMatcher';
 import { Button } from '@/components/ui/button';
 import type { CompoundsJson } from '@/components/utils/compounds';
@@ -15,13 +16,32 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
 }) => {
     const [droppedElements, setDroppedElements] = useState<Element[]>([]);
     const matched = useCompoundMatcher(droppedElements, compounds);
-    const atomPositions = droppedElements.map((el, i) => ({
-        symbol: el.symbol,
-        color: el.color, // Default color, can be customized
-        x: (i - (droppedElements.length - 1) / 2) * 2.5,
-        y: 0,
-        z: 0
-    }));
+    let atomPositions: AtomPosition[];
+    if (matched && compounds[matched]?.layout) {
+        // layout順で表示
+        atomPositions = compounds[matched].layout.map((layoutAtom) => {
+            // droppedElementsから該当symbolのcolorを取得（なければデフォルト）
+            const dropped = droppedElements.find(
+                (el) => el.symbol === layoutAtom.symbol
+            );
+            return {
+                symbol: layoutAtom.symbol,
+                color: dropped?.color ?? '#e0e0e0',
+                x: layoutAtom.x,
+                y: layoutAtom.y,
+                z: 0
+            };
+        });
+    } else {
+        // ドロップ順で表示
+        atomPositions = droppedElements.map((el, i) => ({
+            symbol: el.symbol,
+            color: el.color, // Default color, can be customized
+            x: (i - (droppedElements.length - 1) / 2) * 2.5,
+            y: 0,
+            z: 0
+        }));
+    }
     const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         const jsonStr = e.dataTransfer.getData('application/json');
