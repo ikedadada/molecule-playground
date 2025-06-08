@@ -1,3 +1,5 @@
+import { basename } from '../../config';
+
 export interface CompoundDef {
     displayName: string;
     formula: Record<string, number>;
@@ -7,7 +9,7 @@ export interface CompoundDef {
 export type CompoundsJson = Record<string, CompoundDef>;
 
 export async function fetchCompounds(): Promise<CompoundsJson> {
-    const res = await fetch('/compounds.json');
+    const res = await fetch(`${basename}compounds.json`);
     if (!res.ok) throw new Error('Failed to load compounds.json');
     return res.json();
 }
