@@ -45,8 +45,8 @@ export const AtomsCanvas: React.FC<AtomsCanvasProps> = ({ atoms }) => {
     );
     return (
         <Canvas
-            style={{ width: 400, height: 200, background: '#fff' }}
-            camera={{ position: [0, 0, 10], fov: 50 }}
+            style={{ width: 800, height: 400, background: '#fff' }}
+            camera={{ position: [0, 0, 10], fov: 75 }}
         >
             <ambientLight intensity={0.7} />
             <directionalLight position={[5, 5, 5]} intensity={0.7} />

@@ -5,52 +5,80 @@ export interface PeriodicTableProps {
     elements: Element[];
 }
 
-export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => (
-    <svg viewBox="0 0 400 120" width="100%" height="120" aria-label="周期表">
-        <title>周期表</title>
-        <g fontFamily="sans-serif" fontSize="18" textAnchor="middle">
-            {elements.map((el, i) => (
-                <foreignObject
-                    x={10 + i * 50}
-                    y={10}
-                    width={40}
-                    height={40}
-                    key={el.symbol}
-                >
-                    <button
-                        type="button"
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            background: el.color,
-                            border: '1px solid #333',
-                            fontSize: 18,
-                            fontFamily: 'inherit',
-                            cursor: 'pointer',
-                            padding: 0,
-                            margin: 0,
-                            outline: 'none',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                        draggable
-                        onDragStart={(e) => {
-                            e.dataTransfer.setData(
-                                'application/json',
-                                JSON.stringify({
-                                    symbol: el.symbol,
-                                    color: el.color
-                                })
-                            );
-                        }}
-                        onClick={() => alert(`${el.symbol} を選択しました`)}
-                        aria-label={el.symbol}
-                    >
-                        {el.symbol}
-                    </button>
-                </foreignObject>
-            ))}
-        </g>
-    </svg>
-);
+export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
+    // 1行あたりの最大列数
+    const COLS = 10;
+    const CELL_SIZE = 40;
+    const PADDING = 10;
+    const GAP = 10;
+    const getPosition = (i: number) => {
+        const col = i % COLS;
+        const row = Math.floor(i / COLS);
+        return {
+            x: PADDING + col * (CELL_SIZE + GAP),
+            y: PADDING + row * (CELL_SIZE + GAP)
+        };
+    };
+    const rows = Math.ceil(elements.length / COLS);
+    const width = PADDING * 2 + COLS * CELL_SIZE + (COLS - 1) * GAP;
+    const height = PADDING * 2 + rows * CELL_SIZE + (rows - 1) * GAP;
+    return (
+        <svg
+            viewBox={`0 0 ${width} ${height}`}
+            width="100%"
+            height={height}
+            aria-label="周期表"
+        >
+            <title>周期表</title>
+            <g fontFamily="sans-serif" fontSize="18" textAnchor="middle">
+                {elements.map((el, i) => {
+                    const pos = getPosition(i);
+                    return (
+                        <foreignObject
+                            x={pos.x}
+                            y={pos.y}
+                            width={CELL_SIZE}
+                            height={CELL_SIZE}
+                            key={el.symbol}
+                        >
+                            <button
+                                type="button"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    background: el.color,
+                                    border: '1px solid #333',
+                                    fontSize: 18,
+                                    fontFamily: 'inherit',
+                                    cursor: 'pointer',
+                                    padding: 0,
+                                    margin: 0,
+                                    outline: 'none',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}
+                                draggable
+                                onDragStart={(e) => {
+                                    e.dataTransfer.setData(
+                                        'application/json',
+                                        JSON.stringify({
+                                            symbol: el.symbol,
+                                            color: el.color
+                                        })
+                                    );
+                                }}
+                                onClick={() =>
+                                    alert(`${el.symbol} を選択しました`)
+                                }
+                                aria-label={el.symbol}
+                            >
+                                {el.symbol}
+                            </button>
+                        </foreignObject>
+                    );
+                })}
+            </g>
+        </svg>
+    );
+};

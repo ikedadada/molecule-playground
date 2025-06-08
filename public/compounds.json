@@ -18,5 +18,425 @@
       { "symbol": "O", "x": -1, "y": 0 }
     ],
     "props": { "meltingPoint": -56.6, "boilingPoint": -78.5 }
+  },
+  "CH4": {
+    "displayName": "Methane",
+    "formula": { "C": 1, "H": 4 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "H", "x": 1, "y": 1 },
+      { "symbol": "H", "x": -1, "y": 1 },
+      { "symbol": "H", "x": 1, "y": -1 },
+      { "symbol": "H", "x": -1, "y": -1 }
+    ],
+    "props": { "meltingPoint": -182.5, "boilingPoint": -161.5 }
+  },
+  "NH3": {
+    "displayName": "Ammonia",
+    "formula": { "N": 1, "H": 3 },
+    "layout": [
+      { "symbol": "N", "x": 0, "y": 0 },
+      { "symbol": "H", "x": 0, "y": 1.1 },
+      { "symbol": "H", "x": 1, "y": -0.6 },
+      { "symbol": "H", "x": -1, "y": -0.6 }
+    ],
+    "props": { "meltingPoint": -77.7, "boilingPoint": -33.3 }
+  },
+  "NaCl": {
+    "displayName": "Sodium Chloride",
+    "formula": { "Na": 1, "Cl": 1 },
+    "layout": [
+      { "symbol": "Na", "x": -0.5, "y": 0 },
+      { "symbol": "Cl", "x": 0.5, "y": 0 }
+    ],
+    "props": { "meltingPoint": 801, "boilingPoint": 1413 }
+  },
+  "O2": {
+    "displayName": "Oxygen (Gas)",
+    "formula": { "O": 2 },
+    "layout": [
+      { "symbol": "O", "x": -0.6, "y": 0 },
+      { "symbol": "O", "x": 0.6, "y": 0 }
+    ],
+    "props": { "meltingPoint": -218.8, "boilingPoint": -183.0 }
+  },
+  "N2": {
+    "displayName": "Nitrogen (Gas)",
+    "formula": { "N": 2 },
+    "layout": [
+      { "symbol": "N", "x": -0.6, "y": 0 },
+      { "symbol": "N", "x": 0.6, "y": 0 }
+    ],
+    "props": { "meltingPoint": -210.0, "boilingPoint": -195.8 }
+  },
+  "HCl": {
+    "displayName": "Hydrochloric Acid (Gas)",
+    "formula": { "H": 1, "Cl": 1 },
+    "layout": [
+      { "symbol": "H", "x": -0.5, "y": 0 },
+      { "symbol": "Cl", "x": 0.5, "y": 0 }
+    ],
+    "props": { "meltingPoint": -114.2, "boilingPoint": -85.1 }
+  },
+  "H2": {
+    "displayName": "Hydrogen (Gas)",
+    "formula": { "H": 2 },
+    "layout": [
+      { "symbol": "H", "x": -0.6, "y": 0 },
+      { "symbol": "H", "x": 0.6, "y": 0 }
+    ],
+    "props": { "meltingPoint": -259.1, "boilingPoint": -252.9 }
+  },
+  "C6H12O6": {
+    "displayName": "Glucose (2-D placeholder)",
+    "formula": { "C": 6, "H": 12, "O": 6 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "C", "x": 1, "y": 0 },
+      { "symbol": "C", "x": 2, "y": 0 },
+      { "symbol": "C", "x": 3, "y": 0 },
+      { "symbol": "C", "x": 2, "y": 1 },
+      { "symbol": "C", "x": 1, "y": 1 },
+      { "symbol": "O", "x": 0, "y": 1 },
+      { "symbol": "O", "x": 3, "y": 1 },
+      { "symbol": "O", "x": 1.5, "y": -1 },
+      { "symbol": "O", "x": 2.5, "y": -1 },
+      { "symbol": "O", "x": 0.5, "y": -1 },
+      { "symbol": "O", "x": 3.5, "y": -1 },
+      { "symbol": "H", "x": -0.8, "y": 0.2 },
+      { "symbol": "H", "x": 4, "y": 0.2 },
+      { "symbol": "H", "x": 2, "y": 2 },
+      { "symbol": "H", "x": 1, "y": 2 },
+      { "symbol": "H", "x": 0, "y": -2 },
+      { "symbol": "H", "x": 3, "y": -2 }
+    ],
+    "props": { "meltingPoint": 146, "boilingPoint": null }
+  },
+  "H2O2": {
+    "displayName": "Hydrogen Peroxide",
+    "formula": { "H": 2, "O": 2 },
+    "layout": [
+      { "symbol": "H", "x": -2, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "H", "x": 2, "y": 0 }
+    ],
+    "props": { "meltingPoint": -0.4, "boilingPoint": 150.2 }
+  },
+  "O3": {
+    "displayName": "Ozone",
+    "formula": { "O": 3 },
+    "layout": [
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 }
+    ],
+    "props": { "meltingPoint": -192, "boilingPoint": -112 }
+  },
+  "SO2": {
+    "displayName": "Sulfur Dioxide",
+    "formula": { "S": 1, "O": 2 },
+    "layout": [
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0.7 },
+      { "symbol": "O", "x": -1, "y": 0.7 }
+    ],
+    "props": { "meltingPoint": -72, "boilingPoint": -10 }
+  },
+  "SO3": {
+    "displayName": "Sulfur Trioxide",
+    "formula": { "S": 1, "O": 3 },
+    "layout": [
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 1.4 }
+    ],
+    "props": { "meltingPoint": 16.9, "boilingPoint": 45 }
+  },
+  "H2SO4": {
+    "displayName": "Sulfuric Acid",
+    "formula": { "H": 2, "S": 1, "O": 4 },
+    "layout": [
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 1.4 },
+      { "symbol": "O", "x": 0, "y": -1.4 },
+      { "symbol": "H", "x": 0, "y": 2.2 },
+      { "symbol": "H", "x": 0, "y": -2.2 }
+    ],
+    "props": { "meltingPoint": 10.3, "boilingPoint": 337 }
+  },
+  "HNO3": {
+    "displayName": "Nitric Acid",
+    "formula": { "H": 1, "N": 1, "O": 3 },
+    "layout": [
+      { "symbol": "N", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 1.4 },
+      { "symbol": "H", "x": 0, "y": 2.2 }
+    ],
+    "props": { "meltingPoint": -42, "boilingPoint": 83 }
+  },
+  "NaOH": {
+    "displayName": "Sodium Hydroxide",
+    "formula": { "Na": 1, "O": 1, "H": 1 },
+    "layout": [
+      { "symbol": "Na", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 0 },
+      { "symbol": "H", "x": 1, "y": 0 }
+    ],
+    "props": { "meltingPoint": 318, "boilingPoint": 1388 }
+  },
+  "KOH": {
+    "displayName": "Potassium Hydroxide",
+    "formula": { "K": 1, "O": 1, "H": 1 },
+    "layout": [
+      { "symbol": "K", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 0 },
+      { "symbol": "H", "x": 1, "y": 0 }
+    ],
+    "props": { "meltingPoint": 360, "boilingPoint": 1327 }
+  },
+  "CaCO3": {
+    "displayName": "Calcium Carbonate",
+    "formula": { "Ca": 1, "C": 1, "O": 3 },
+    "layout": [
+      { "symbol": "Ca", "x": -2, "y": 0 },
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 1 },
+      { "symbol": "O", "x": -1, "y": -1 }
+    ],
+    "props": { "meltingPoint": 1339, "boilingPoint": null }
+  },
+  "NaHCO3": {
+    "displayName": "Sodium Bicarbonate",
+    "formula": { "Na": 1, "H": 1, "C": 1, "O": 3 },
+    "layout": [
+      { "symbol": "Na", "x": -2, "y": 0 },
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 1 },
+      { "symbol": "O", "x": -1, "y": -1 },
+      { "symbol": "H", "x": 0, "y": 1.6 }
+    ],
+    "props": { "meltingPoint": 50, "boilingPoint": null }
+  },
+  "SiO2": {
+    "displayName": "Silicon Dioxide",
+    "formula": { "Si": 1, "O": 2 },
+    "layout": [
+      { "symbol": "Si", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 }
+    ],
+    "props": { "meltingPoint": 1713, "boilingPoint": 2230 }
+  },
+  "MgSO4": {
+    "displayName": "Magnesium Sulfate",
+    "formula": { "Mg": 1, "S": 1, "O": 4 },
+    "layout": [
+      { "symbol": "Mg", "x": -2, "y": 0 },
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 1 },
+      { "symbol": "O", "x": -1, "y": -1 },
+      { "symbol": "O", "x": 0, "y": 1.4 }
+    ],
+    "props": { "meltingPoint": 1124, "boilingPoint": null }
+  },
+  "Ca(OH)2": {
+    "displayName": "Calcium Hydroxide",
+    "formula": { "Ca": 1, "O": 2, "H": 2 },
+    "layout": [
+      { "symbol": "Ca", "x": -1.5, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 0.8 },
+      { "symbol": "H", "x": 1, "y": 0.8 },
+      { "symbol": "O", "x": 0, "y": -0.8 },
+      { "symbol": "H", "x": 1, "y": -0.8 }
+    ],
+    "props": { "meltingPoint": 580, "boilingPoint": null }
+  },
+  "NH4NO3": {
+    "displayName": "Ammonium Nitrate",
+    "formula": { "N": 2, "H": 4, "O": 3 },
+    "layout": [
+      { "symbol": "N", "x": -1, "y": 0 },
+      { "symbol": "H", "x": -1.8, "y": 0.8 },
+      { "symbol": "H", "x": -1.8, "y": -0.8 },
+      { "symbol": "H", "x": -0.2, "y": 0.8 },
+      { "symbol": "H", "x": -0.2, "y": -0.8 },
+      { "symbol": "N", "x": 1, "y": 0 },
+      { "symbol": "O", "x": 2, "y": 0.7 },
+      { "symbol": "O", "x": 2, "y": -0.7 },
+      { "symbol": "O", "x": 1, "y": 1.4 }
+    ],
+    "props": { "meltingPoint": 169.6, "boilingPoint": null }
+  },
+  "C6H6": {
+    "displayName": "Benzene (2-D ring)",
+    "formula": { "C": 6, "H": 6 },
+    "layout": [
+      { "symbol": "C", "x": 1.0, "y": 0 },
+      { "symbol": "C", "x": 0.5, "y": 0.87 },
+      { "symbol": "C", "x": -0.5, "y": 0.87 },
+      { "symbol": "C", "x": -1.0, "y": 0 },
+      { "symbol": "C", "x": -0.5, "y": -0.87 },
+      { "symbol": "C", "x": 0.5, "y": -0.87 },
+      { "symbol": "H", "x": 1.9, "y": 0 },
+      { "symbol": "H", "x": 0.95, "y": 1.65 },
+      { "symbol": "H", "x": -0.95, "y": 1.65 },
+      { "symbol": "H", "x": -1.9, "y": 0 },
+      { "symbol": "H", "x": -0.95, "y": -1.65 },
+      { "symbol": "H", "x": 0.95, "y": -1.65 }
+    ],
+    "props": { "meltingPoint": 5.5, "boilingPoint": 80.1 }
+  },
+  "Na2SO4": {
+    "displayName": "Sodium Sulfate",
+    "formula": { "Na": 2, "S": 1, "O": 4 },
+    "layout": [
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 1.4 },
+      { "symbol": "O", "x": 0, "y": -1.4 },
+      { "symbol": "Na", "x": 2, "y": 0.7 },
+      { "symbol": "Na", "x": -2, "y": -0.7 }
+    ],
+    "props": { "meltingPoint": 884, "boilingPoint": 1429 }
+  },
+  "KCl": {
+    "displayName": "Potassium Chloride",
+    "formula": { "K": 1, "Cl": 1 },
+    "layout": [
+      { "symbol": "K", "x": -0.6, "y": 0 },
+      { "symbol": "Cl", "x": 0.6, "y": 0 }
+    ],
+    "props": { "meltingPoint": 770, "boilingPoint": 1420 }
+  },
+  "Fe2O3": {
+    "displayName": "Iron(III) Oxide",
+    "formula": { "Fe": 2, "O": 3 },
+    "layout": [
+      { "symbol": "Fe", "x": -1, "y": 0 },
+      { "symbol": "Fe", "x": 1, "y": 0 },
+      { "symbol": "O", "x": 0, "y": 1 },
+      { "symbol": "O", "x": 0, "y": -1 },
+      { "symbol": "O", "x": 0, "y": 0 }
+    ],
+    "props": { "meltingPoint": 1565, "boilingPoint": 2844 }
+  },
+  "CuSO4": {
+    "displayName": "Copper(II) Sulfate",
+    "formula": { "Cu": 1, "S": 1, "O": 4 },
+    "layout": [
+      { "symbol": "Cu", "x": -2, "y": 0 },
+      { "symbol": "S", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 1 },
+      { "symbol": "O", "x": -1, "y": -1 },
+      { "symbol": "O", "x": 0, "y": 1.4 }
+    ],
+    "props": { "meltingPoint": 200, "boilingPoint": null }
+  },
+  "C12H22O11": {
+    "displayName": "Sucrose (2-D placeholder)",
+    "formula": { "C": 12, "H": 22, "O": 11 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "C", "x": 1, "y": 0 },
+      { "symbol": "C", "x": 2, "y": 0 },
+      { "symbol": "C", "x": 3, "y": 0 },
+      { "symbol": "C", "x": 4, "y": 0 },
+      { "symbol": "C", "x": 2, "y": 1 },
+      { "symbol": "C", "x": 1, "y": 1 },
+      { "symbol": "C", "x": 3, "y": 1 },
+      { "symbol": "O", "x": 0, "y": 1 },
+      { "symbol": "O", "x": 4, "y": 1 },
+      { "symbol": "O", "x": 1.5, "y": -1 },
+      { "symbol": "O", "x": 2.5, "y": -1 },
+      { "symbol": "O", "x": 0.5, "y": -1 },
+      { "symbol": "O", "x": 3.5, "y": -1 },
+      { "symbol": "O", "x": 2, "y": 2 },
+      { "symbol": "O", "x": 1, "y": 2 },
+      { "symbol": "H", "x": -0.8, "y": 0.2 },
+      { "symbol": "H", "x": 5, "y": 0.2 },
+      { "symbol": "H", "x": 0, "y": -2 },
+      { "symbol": "H", "x": 4, "y": -2 },
+      { "symbol": "H", "x": 2, "y": -2 },
+      { "symbol": "H", "x": 2, "y": 3 }
+    ],
+    "props": { "meltingPoint": 186, "boilingPoint": null }
+  },
+  "CH3OH": {
+    "displayName": "Methanol",
+    "formula": { "C": 1, "H": 4, "O": 1 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1.4, "y": 0 },
+      { "symbol": "H", "x": -1.2, "y": 0 },
+      { "symbol": "H", "x": -0.3, "y": 1.1 },
+      { "symbol": "H", "x": -0.3, "y": -1.1 },
+      { "symbol": "H", "x": 2.1, "y": 0.8 }
+    ],
+    "props": { "meltingPoint": -97.6, "boilingPoint": 64.7 }
+  },
+  "C2H5OH": {
+    "displayName": "Ethanol",
+    "formula": { "C": 2, "H": 6, "O": 1 },
+    "layout": [
+      { "symbol": "C", "x": -1, "y": 0 },
+      { "symbol": "C", "x": 1, "y": 0 },
+      { "symbol": "O", "x": 2.4, "y": 0 },
+      { "symbol": "H", "x": -1.8, "y": 1 },
+      { "symbol": "H", "x": -1.8, "y": -1 },
+      { "symbol": "H", "x": 0, "y": 1 },
+      { "symbol": "H", "x": 0, "y": -1 },
+      { "symbol": "H", "x": 3.1, "y": 0.8 }
+    ],
+    "props": { "meltingPoint": -114.1, "boilingPoint": 78.4 }
+  },
+  "C3H8O": {
+    "displayName": "Isopropanol",
+    "formula": { "C": 3, "H": 8, "O": 1 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "C", "x": 1.5, "y": 0 },
+      { "symbol": "C", "x": -1.5, "y": 0 },
+      { "symbol": "O", "x": 3.0, "y": 0 },
+      { "symbol": "H", "x": 0, "y": 1.2 },
+      { "symbol": "H", "x": 0, "y": -1.2 },
+      { "symbol": "H", "x": 1.5, "y": 1.2 },
+      { "symbol": "H", "x": 1.5, "y": -1.2 },
+      { "symbol": "H", "x": -1.5, "y": 1.2 },
+      { "symbol": "H", "x": -1.5, "y": -1.2 },
+      { "symbol": "H", "x": 3.7, "y": 0.8 }
+    ],
+    "props": { "meltingPoint": -89.5, "boilingPoint": 82.6 }
+  },
+  "C4H9OH": {
+    "displayName": "1-Butanol",
+    "formula": { "C": 4, "H": 10, "O": 1 },
+    "layout": [
+      { "symbol": "C", "x": -2.0, "y": 0 },
+      { "symbol": "C", "x": -0.7, "y": 0 },
+      { "symbol": "C", "x": 0.7, "y": 0 },
+      { "symbol": "C", "x": 2.1, "y": 0 },
+      { "symbol": "O", "x": 3.6, "y": 0 },
+      { "symbol": "H", "x": -2.8, "y": 1 },
+      { "symbol": "H", "x": -2.8, "y": -1 },
+      { "symbol": "H", "x": -0.7, "y": 1.2 },
+      { "symbol": "H", "x": -0.7, "y": -1.2 },
+      { "symbol": "H", "x": 0.7, "y": 1.2 },
+      { "symbol": "H", "x": 0.7, "y": -1.2 },
+      { "symbol": "H", "x": 2.1, "y": 1.2 },
+      { "symbol": "H", "x": 2.1, "y": -1.2 },
+      { "symbol": "H", "x": 4.3, "y": 0.8 }
+    ],
+    "props": { "meltingPoint": -89.8, "boilingPoint": 117.7 }
   }
 }
