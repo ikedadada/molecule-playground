@@ -1,7 +1,7 @@
 import { useSprings } from '@react-spring/three';
 import { a } from '@react-spring/three';
 import type { SpringValue } from '@react-spring/three';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Text } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import type React from 'react';
 import { useEffect, useRef } from 'react';
@@ -28,13 +28,18 @@ export const AtomsCanvas: React.FC<AtomsCanvasProps> = ({ atoms }) => {
         atoms.length,
         (index) => ({
             from: {
-                position: prevAtoms.current[index]
-                    ? [
-                          prevAtoms.current[index].x,
-                          prevAtoms.current[index].y,
-                          prevAtoms.current[index].z
-                      ]
-                    : [atoms[index].x, atoms[index].y, atoms[index].z]
+                position:
+                    prevAtoms.current[index] && atoms.length > 0
+                        ? [
+                              prevAtoms.current[index].x,
+                              prevAtoms.current[index].y,
+                              prevAtoms.current[index].z
+                          ]
+                        : [
+                              atoms[index]?.x ?? 0,
+                              atoms[index]?.y ?? 0,
+                              atoms[index]?.z ?? 0
+                          ]
             },
             to: {
                 position: [atoms[index].x, atoms[index].y, atoms[index].z]
@@ -50,18 +55,19 @@ export const AtomsCanvas: React.FC<AtomsCanvasProps> = ({ atoms }) => {
         >
             <ambientLight intensity={0.7} />
             <directionalLight position={[5, 5, 5]} intensity={0.7} />
-            {springs.map((spring, i) => (
-                <Atom3D
-                    key={`${atoms[i].symbol}-${atoms[i].x}`}
-                    symbol={atoms[i].symbol}
-                    color={atoms[i].color}
-                    position={
-                        spring.position as unknown as import(
-                            '@react-spring/three'
-                        ).SpringValue<[number, number, number]>
-                    }
-                />
-            ))}
+            {atoms.length > 0 &&
+                springs.map((spring, i) => (
+                    <Atom3D
+                        key={`${atoms[i].symbol}-${atoms[i].x}-${atoms[i].y}-${atoms[i].z}`}
+                        symbol={atoms[i].symbol}
+                        color={atoms[i].color}
+                        position={
+                            spring.position as unknown as import(
+                                '@react-spring/three'
+                            ).SpringValue<[number, number, number]>
+                        }
+                    />
+                ))}
             <OrbitControls enablePan={false} />
         </Canvas>
     );
@@ -77,6 +83,17 @@ export const Atom3D: React.FC<Atom3DProps> = ({ symbol, color, position }) => (
     <a.mesh position={position}>
         <sphereGeometry args={[0.9, 32, 32]} />
         <meshStandardMaterial color={color} />
-        {/* ラベルやデバッグ用にsymbolを使う場合はここに追加 */}
+        {/* ラベルを球の前面（カメラ側）に常に表示する */}
+        <Text
+            position={[0, 0, 1.1]} // 球の前面にラベルを配置
+            fontSize={0.5}
+            color="#222"
+            anchorX="center"
+            anchorY="middle"
+            outlineWidth={0.03}
+            outlineColor="#fff"
+        >
+            {symbol}
+        </Text>
     </a.mesh>
 );
