@@ -73,7 +73,7 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
         >
-            <AtomsCanvas atoms={atomPositions} />
+            <AtomsCanvas atoms={atomPositions} isFloating={!matched} />
             {droppedElements.length === 0 ? (
                 <span style={{ color: '#888' }}>ここに元素をドロップ</span>
             ) : (
