@@ -1,5 +1,6 @@
 import type { Config } from '@react-router/dev/config';
 
+// GitHub Pages deployment requires a specific basename
 export const basename =
     process.env.GITHUB_ACTIONS === 'true' ? '/molecule_playground/' : '/';
 
