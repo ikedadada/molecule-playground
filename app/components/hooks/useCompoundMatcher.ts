@@ -1,6 +1,6 @@
+import type { CompoundsJson } from '@/components/utils/compounds';
+import type { Element } from '@/components/utils/elements';
 import { useEffect, useState } from 'react';
-import type { CompoundsJson } from '../utils/compounds';
-import type { Element } from '../utils/elements';
 
 export function useCompoundMatcher(
     droppedElements: Element[],

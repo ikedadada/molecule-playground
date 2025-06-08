@@ -1,7 +1,7 @@
-import { useElements } from '~/components/hooks/useElements';
-import { BuilderWorkspace } from '../../components/features/BuilderWorkspace';
-import { PeriodicTable } from '../../components/features/PeriodicTable';
-import { useCompounds } from '../../components/hooks/useCompounds';
+import { BuilderWorkspace } from '@/components/features/BuilderWorkspace';
+import { PeriodicTable } from '@/components/features/PeriodicTable';
+import { useCompounds } from '@/components/hooks/useCompounds';
+import { useElements } from '@/components/hooks/useElements';
 
 export function Home() {
     const compounds = useCompounds();

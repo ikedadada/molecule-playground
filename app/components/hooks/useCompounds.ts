@@ -1,6 +1,8 @@
+import {
+    type CompoundsJson,
+    fetchCompounds
+} from '@/components/utils/compounds';
 import { useEffect, useState } from 'react';
-import type { CompoundsJson } from '../utils/compounds';
-import { fetchCompounds } from '../utils/compounds';
 
 export function useCompounds() {
     const [compounds, setCompounds] = useState<CompoundsJson | null>(null);

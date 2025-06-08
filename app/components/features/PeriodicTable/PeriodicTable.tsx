@@ -1,5 +1,5 @@
+import type { Element } from '@/components/utils/elements';
 import type React from 'react';
-import type { Element } from '../../utils/elements';
 
 export interface PeriodicTableProps {
     elements: Element[];

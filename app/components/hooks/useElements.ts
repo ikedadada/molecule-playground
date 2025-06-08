@@ -1,6 +1,5 @@
+import { type ElementsJson, fetchElements } from '@/components/utils/elements';
 import { useEffect, useState } from 'react';
-import type { ElementsJson } from '../utils/elements';
-import { fetchElements } from '../utils/elements';
 
 export function useElements() {
     const [elements, setElements] = useState<ElementsJson | null>(null);

@@ -1,10 +1,10 @@
+import { AtomsCanvas } from '@/components/atoms/AtomsCanvas';
+import { useCompoundMatcher } from '@/components/hooks/useCompoundMatcher';
+import { Button } from '@/components/ui/button';
+import type { CompoundsJson } from '@/components/utils/compounds';
+import type { Element } from '@/components/utils/elements';
 import type React from 'react';
 import { useState } from 'react';
-import { Button } from '~/components/ui/button';
-import { AtomsCanvas } from '../../atoms/AtomsCanvas';
-import { useCompoundMatcher } from '../../hooks/useCompoundMatcher';
-import type { CompoundsJson } from '../../utils/compounds';
-import type { Element } from '../../utils/elements';
 
 export interface BuilderWorkspaceProps {
     compounds: CompoundsJson;
