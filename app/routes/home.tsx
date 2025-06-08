@@ -1,4 +1,4 @@
-import { Welcome } from '../welcome/welcome';
+import { Home as _Home } from '../components/pages/home';
 import type { Route } from './+types/home';
 
 export function meta(_args: Route.MetaArgs) {
@@ -9,5 +9,5 @@ export function meta(_args: Route.MetaArgs) {
 }
 
 export default function Home() {
-    return <Welcome />;
+    return <_Home />;
 }

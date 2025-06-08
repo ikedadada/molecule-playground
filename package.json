@@ -8,7 +8,9 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "biome check .",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
@@ -20,14 +22,25 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@chromatic-com/storybook": "^4.0.0",
     "@react-router/dev": "^7.5.3",
+    "@storybook/addon-a11y": "^9.0.6",
+    "@storybook/addon-docs": "^9.0.6",
+    "@storybook/addon-onboarding": "^9.0.6",
+    "@storybook/addon-vitest": "^9.0.6",
+    "@storybook/react-vite": "^9.0.6",
     "@tailwindcss/vite": "^4.1.4",
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@vitest/browser": "^3.2.2",
+    "@vitest/coverage-v8": "^3.2.2",
+    "playwright": "^1.52.0",
+    "storybook": "^9.0.6",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.2"
   }
 }
