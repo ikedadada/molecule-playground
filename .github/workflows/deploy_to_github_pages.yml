@@ -20,7 +20,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run build         # => build/client
+      - run: npm run build
+      - run: mv build/client/molecule_playground/index.html build/client/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build/client       # アーティファクト化
