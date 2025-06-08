@@ -1,0 +1,9 @@
+[
+  { "symbol": "H", "color": "#e0f7fa" },
+  { "symbol": "O", "color": "#fce4ec" },
+  { "symbol": "C", "color": "#e8f5e9" },
+  { "symbol": "N", "color": "#fff3e0" },
+  { "symbol": "Na", "color": "#e3f2fd" },
+  { "symbol": "Cl", "color": "#f9fbe7" },
+  { "symbol": "S", "color": "#f3e5f5" }
+]

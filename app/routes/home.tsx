@@ -1,4 +1,4 @@
-import { Home as _Home } from '../components/pages/home';
+import { Home as _Home } from '../pages/home';
 import type { Route } from './+types/home';
 
 export function meta(_args: Route.MetaArgs) {

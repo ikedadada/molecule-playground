@@ -1,0 +1,22 @@
+{
+  "H2O": {
+    "displayName": "Water",
+    "formula": { "H": 2, "O": 1 },
+    "layout": [
+      { "symbol": "O", "x": 0, "y": 0 },
+      { "symbol": "H", "x": 1, "y": 0.7 },
+      { "symbol": "H", "x": -1, "y": 0.7 }
+    ],
+    "props": { "meltingPoint": 0, "boilingPoint": 100 }
+  },
+  "CO2": {
+    "displayName": "Carbon Dioxide",
+    "formula": { "C": 1, "O": 2 },
+    "layout": [
+      { "symbol": "C", "x": 0, "y": 0 },
+      { "symbol": "O", "x": 1, "y": 0 },
+      { "symbol": "O", "x": -1, "y": 0 }
+    ],
+    "props": { "meltingPoint": -56.6, "boilingPoint": -78.5 }
+  }
+}
