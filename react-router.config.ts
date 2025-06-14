@@ -6,7 +6,7 @@ export const basename =
 
 export default {
     // Config options...
-    // Server-side render by default, to enable SPA mode set this to `false`
+    // Server-side rendering is optional; set to `true` to enable SSR
     ssr: false,
     prerender: true,
     basename
