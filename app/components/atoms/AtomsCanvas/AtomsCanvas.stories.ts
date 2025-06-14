@@ -20,7 +20,7 @@ export const MultipleAtoms: Story = {
         atoms: [
             { symbol: 'H', color: '#b3e5fc', x: 0, y: 0, z: 0 },
             { symbol: 'O', color: '#ff8a80', x: 1, y: 1, z: 1 },
-            { symbol: 'C', color: 'bdbdbd', x: -1, y: -1, z: -1 }
+            { symbol: 'C', color: '#bdbdbd', x: -1, y: -1, z: -1 }
         ]
     }
 };
