@@ -10,6 +10,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => {
     const plugins = [tailwindcss(), tsconfigPaths()];
+    // Only include React Router plugin during regular builds; Vitest
+    // sets the VITEST environment variable and doesn't need routing.
     if (!process.env.VITEST) {
         plugins.unshift(reactRouter());
     }
