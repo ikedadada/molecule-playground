@@ -2,7 +2,7 @@ export interface CompoundDef {
     displayName: string;
     formula: Record<string, number>;
     layout: Array<{ symbol: string; x: number; y: number }>;
-    props: Record<string, number>;
+    props: Record<string, number | null>;
 }
 export type CompoundsJson = Record<string, CompoundDef>;
 
