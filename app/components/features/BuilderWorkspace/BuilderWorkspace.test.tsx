@@ -8,7 +8,7 @@ vi.mock('@/components/atoms/AtomsCanvas', () => ({
 import { AtomsCanvas } from '@/components/atoms/AtomsCanvas';
 import { BuilderWorkspace } from './BuilderWorkspace';
 
-// useCompoundMatcher works with provided compounds; here we use real hook
+// use the real hook with provided compounds
 
 describe('BuilderWorkspace', () => {
     const compounds = {
@@ -36,7 +36,6 @@ describe('BuilderWorkspace', () => {
             }
         } as unknown as DragEvent);
 
-        // button should appear after drop
         expect(
             screen.getByRole('button', { name: 'リセット' })
         ).toBeInTheDocument();
