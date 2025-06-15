@@ -9,6 +9,7 @@
     "typecheck": "react-router typegen && tsc",
     "lint": "biome check .",
     "format": "biome format --write .",
+    "prepare": "npx lefthook install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run"
@@ -31,6 +32,7 @@
     "three": "^0.177.0"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.7",
     "@biomejs/biome": "^1.9.4",
     "@chromatic-com/storybook": "^4.0.0",
     "@react-router/dev": "^7.5.3",
