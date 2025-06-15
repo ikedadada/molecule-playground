@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Element } from '../utils/elements';
 import { useCompoundMatcher } from './useCompoundMatcher';
 
 const compounds = {
@@ -14,7 +15,7 @@ describe('useCompoundMatcher', () => {
     it('matches compound from elements', () => {
         const { result, rerender } = renderHook(
             ({ elements }) => useCompoundMatcher(elements, compounds),
-            { initialProps: { elements: [] } }
+            { initialProps: { elements: [] as Element[] } }
         );
 
         expect(result.current).toBeNull();

@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
 
 vi.mock('@/components/atoms/AtomsCanvas', () => ({
     AtomsCanvas: vi.fn(() => <div data-testid="atoms-canvas" />)

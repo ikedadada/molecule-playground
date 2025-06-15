@@ -55,10 +55,7 @@ export const AtomsCanvas: React.FC<AtomsCanvasProps> = ({
         [atoms]
     );
     return (
-        <Canvas
-            className="h-[400px] w-[800px] bg-black"
-            camera={{ position: [0, 0, 10], fov: 75 }}
-        >
+        <Canvas className="bg-black" camera={{ position: [0, 0, 10], fov: 70 }}>
             <ambientLight intensity={0.7} />
             <directionalLight position={[5, 5, 5]} intensity={0.7} />
             {atoms.length > 0 &&
