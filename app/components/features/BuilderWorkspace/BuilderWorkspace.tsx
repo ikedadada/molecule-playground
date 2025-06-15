@@ -56,26 +56,34 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
     };
     return (
         <div
-            className="my-6 flex w-full flex-col items-center justify-center gap-3 rounded-lg border-2 border-dashed border-[#aaa] bg-slate-50 p-4 min-h-[320px]"
+            className="md:w-[800px] sm:w-[200px] h-[320px] flex flex-col items-center justify-center gap-3 rounded-lg border-2 border-dashed border-[#aaa] bg-slate-50 p-4"
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
         >
             <AtomsCanvas atoms={atomPositions} isFloating={!matched} />
-            {droppedElements.length === 0 ? (
-                <span className="text-gray-500">ここに元素をドロップ</span>
-            ) : (
-                <Button
-                    variant="outline"
-                    onClick={() => resetDroppedElements()}
-                >
-                    リセット
-                </Button>
-            )}
-            {matched && (
-                <span className="mt-2 text-[18px] font-bold text-green-700">
-                    ✓ {compounds[matched].displayName}（{matched}）と一致！
-                </span>
-            )}
+            <div className="h-[50px] w-full flex flex-col items-center justify-center gap-2">
+                {droppedElements.length === 0 ? (
+                    <span className="text-gray-500">ここに元素をドロップ</span>
+                ) : (
+                    <div className="flex justify-between w-full">
+                        <div className="flex flex-wrap justify-center w-full">
+                            {matched && (
+                                <span className="mt-2 text-[18px] font-bold text-green-700">
+                                    ✓ {compounds[matched].displayName}（
+                                    {matched}
+                                    ）と一致！
+                                </span>
+                            )}
+                        </div>
+                        <Button
+                            variant="outline"
+                            onClick={() => resetDroppedElements()}
+                        >
+                            リセット
+                        </Button>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
