@@ -27,7 +27,6 @@ export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
                             })
                         );
                     }}
-                    onClick={() => alert(`${el.symbol} を選択しました`)}
                     aria-label={el.symbol}
                 >
                     {el.symbol}
