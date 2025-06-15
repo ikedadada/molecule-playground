@@ -15,14 +15,12 @@ describe('PeriodicTable', () => {
         const objects = screen.getAllByRole('button');
         expect(objects).toHaveLength(2);
 
-        // check layout of second element
         const foreignObjects = screen
             .getAllByRole('button')
             .map((btn) => btn.parentElement);
         expect(foreignObjects[1]).toHaveAttribute('x', '60');
         expect(foreignObjects[1]).toHaveAttribute('y', '10');
 
-        // drag start sets data
         const dataTransfer = { setData: vi.fn() } as unknown as DataTransfer;
         fireEvent.dragStart(objects[0], { dataTransfer });
         expect(dataTransfer.setData).toHaveBeenCalledWith(
@@ -30,7 +28,6 @@ describe('PeriodicTable', () => {
             JSON.stringify({ symbol: 'H', color: '#aaa' })
         );
 
-        // click alert
         fireEvent.click(objects[0]);
         expect(window.alert).toHaveBeenCalledWith('H を選択しました');
     });

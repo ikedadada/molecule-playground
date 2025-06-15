@@ -18,9 +18,9 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
     const matched = useCompoundMatcher(droppedElements, compounds);
     let atomPositions: AtomPosition[];
     if (matched && compounds[matched]?.layout) {
-        // layout順で表示
+        // display atoms based on predefined layout
         atomPositions = compounds[matched].layout.map((layoutAtom) => {
-            // droppedElementsから該当symbolのcolorを取得（なければデフォルト）
+            // use dropped color when available
             const dropped = droppedElements.find(
                 (el) => el.symbol === layoutAtom.symbol
             );
@@ -33,10 +33,10 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
             };
         });
     } else {
-        // ドロップ順で表示
+        // fall back to drop order
         atomPositions = droppedElements.map((el, i) => ({
             symbol: el.symbol,
-            color: el.color, // Default color, can be customized
+            color: el.color,
             x: (i - (droppedElements.length - 1) / 2) * 2.5,
             y: 0,
             z: 0
@@ -56,26 +56,13 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
     };
     return (
         <div
-            style={{
-                minHeight: 320,
-                border: '2px dashed #aaa',
-                borderRadius: 12,
-                margin: '24px 0',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: 12,
-                padding: 16,
-                background: '#f8fafc',
-                width: '100%',
-                justifyContent: 'center'
-            }}
+            className="my-6 flex w-full flex-col items-center justify-center gap-3 rounded-lg border-2 border-dashed border-[#aaa] bg-slate-50 p-4 min-h-[320px]"
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
         >
             <AtomsCanvas atoms={atomPositions} isFloating={!matched} />
             {droppedElements.length === 0 ? (
-                <span style={{ color: '#888' }}>ここに元素をドロップ</span>
+                <span className="text-gray-500">ここに元素をドロップ</span>
             ) : (
                 <Button
                     variant="outline"
@@ -85,14 +72,7 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({
                 </Button>
             )}
             {matched && (
-                <span
-                    style={{
-                        color: '#388e3c',
-                        fontWeight: 'bold',
-                        marginTop: 8,
-                        fontSize: 18
-                    }}
-                >
+                <span className="mt-2 text-[18px] font-bold text-green-700">
                     ✓ {compounds[matched].displayName}（{matched}）と一致！
                 </span>
             )}
