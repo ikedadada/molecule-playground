@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      run: npx biome format --write {staged_files}
+    lint:
+      run: npx biome check {staged_files}

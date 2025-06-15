@@ -24,6 +24,10 @@ Install the dependencies:
 npm install
 ```
 
+This repository uses [Lefthook](https://github.com/evilmartians/lefthook) to run
+automatic formatting and linting before each commit. The hooks are installed
+automatically by the `prepare` script when you run `npm install`.
+
 ### Development
 
 Start the development server with HMR:
