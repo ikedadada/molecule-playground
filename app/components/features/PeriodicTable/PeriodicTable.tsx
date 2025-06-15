@@ -1,16 +1,16 @@
 import type { Element } from '@/components/utils/elements';
 import type React from 'react';
+// Layout constants for the periodic table grid
+const COLS = 10;
+const CELL_SIZE = 40;
+const PADDING = 10;
+const GAP = 10;
 
 export interface PeriodicTableProps {
     elements: Element[];
 }
 
 export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
-    // 1行あたりの最大列数
-    const COLS = 10;
-    const CELL_SIZE = 40;
-    const PADDING = 10;
-    const GAP = 10;
     const getPosition = (i: number) => {
         const col = i % COLS;
         const row = Math.floor(i / COLS);
@@ -43,21 +43,8 @@ export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements }) => {
                         >
                             <button
                                 type="button"
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    background: el.color,
-                                    border: '1px solid #333',
-                                    fontSize: 18,
-                                    fontFamily: 'inherit',
-                                    cursor: 'pointer',
-                                    padding: 0,
-                                    margin: 0,
-                                    outline: 'none',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}
+                                className="flex h-full w-full items-center justify-center border border-[#333] text-[18px]"
+                                style={{ background: el.color }}
                                 draggable
                                 onDragStart={(e) => {
                                     e.dataTransfer.setData(
