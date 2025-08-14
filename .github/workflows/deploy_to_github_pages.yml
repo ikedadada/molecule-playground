@@ -22,8 +22,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       # GitHub Pages は index.html をルートに置く必要があるので、
-      # molecule_playground/index.html を index.html にリネームしてルートに配置
-      - run: mv build/client/molecule_playground/index.html build/client/index.html
+      # molecule-playground/index.html を index.html にリネームしてルートに配置
+      - run: mv build/client/molecule-playground/index.html build/client/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build/client       # アーティファクト化
